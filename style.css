@@ -1,0 +1,134 @@
+/* Base Styles */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.auth-page {
+    background-color: #e9ecef;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Navbar */
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+
+/* Kanban Board */
+
+.kanban-board {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+
+.kanban-list {
+    background-color: #e9ecef;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    min-width: 300px;
+    flex: 0 0 auto;
+}
+
+.kanban-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.kanban-list-body {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.kanban-task {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    position: relative;
+}
+
+.kanban-task:active {
+    cursor: grabbing;
+}
+
+.task-priority {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.task-priority.low {
+    background-color: #28a745;
+}
+
+.task-priority.medium {
+    background-color: #ffc107;
+}
+
+.task-priority.high {
+    background-color: #dc3545;
+}
+
+.task-description {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin: 0.5rem 0;
+}
+
+.task-deadline {
+    font-size: 0.8rem;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.task-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+
+/* Drag and Drop */
+
+.dragging {
+    opacity: 0.5;
+    transform: rotate(2deg);
+}
+
+.dropzone {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 2px dashed #6c757d;
+    border-radius: 0.5rem;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .kanban-board {
+        flex-direction: column;
+    }
+    .kanban-list {
+        min-width: 100%;
+    }
+}
